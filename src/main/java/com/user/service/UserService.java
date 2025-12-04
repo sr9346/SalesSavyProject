@@ -4,16 +4,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.user.entity.User;
-import com.user.repository.UserRepo;
+import com.user.repo.UserRepository;
 
 
 @Service
 public class UserService {
 	
-	private final UserRepo userrepo;
+	private final UserRepository userrepo;
 	private final BCryptPasswordEncoder passwordencoder;
 	
-	public UserService(UserRepo userrepo) {
+	public UserService(UserRepository userrepo) {
 		super();
 		this.userrepo = userrepo;
 		this.passwordencoder = new BCryptPasswordEncoder();

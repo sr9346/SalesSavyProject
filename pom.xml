@@ -49,44 +49,52 @@
 			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
+
+		<!-- Password hashing -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+		</dependency>
+
 <dependency>
     <groupId>io.jsonwebtoken</groupId>
     <artifactId>jjwt-api</artifactId>
-    <version>0.13.0</version>
+    <version>0.11.5</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl -->
 <dependency>
     <groupId>io.jsonwebtoken</groupId>
     <artifactId>jjwt-impl</artifactId>
-    <version>0.13.0</version>
+    <version>0.11.5</version>
     <scope>runtime</scope>
 </dependency>
-
-<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson -->
 <dependency>
     <groupId>io.jsonwebtoken</groupId>
     <artifactId>jjwt-jackson</artifactId>
-    <version>0.13.0</version>
+    <version>0.11.5</version>
     <scope>runtime</scope>
 </dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
+<!-- https://mvnrepository.com/artifact/com.razorpay/razorpay-java -->
 <dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-crypto</artifactId>
+    <groupId>com.razorpay</groupId>
+    <artifactId>razorpay-java</artifactId>
+    <version>1.4.5</version>
 </dependency>
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20231013</version>
+</dependency>
+
+
+
 		
 		
 	</dependencies>
