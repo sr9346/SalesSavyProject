@@ -1,16 +1,15 @@
 
-package com.example.demo.controller;
-
-import com.example.demo.entity.User;
-import com.example.demo.service.CartService;
+package com.user.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
-
-import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.user.service.CartService;
+import com.user.entity.User;
+import com.user.repo.UserRepository;
 
 import java.util.Map;
 
@@ -29,7 +28,7 @@ public class CartController {
     @GetMapping("/items/count")
     public ResponseEntity<Integer> getCartItemCount(@RequestParam String username) {
         // Fetch user by username to get the userId
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findByusername(username)
                 .orElseThrow(() -> new IllegalArgumentException("User not found with username: " + username));
 
         // Call the service to get the total cart item count
@@ -61,7 +60,7 @@ public class CartController {
         int quantity = request.containsKey("quantity") ? (int) request.get("quantity") : 1;
 
         // Fetch the user using username
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findByusername(username)
                 .orElseThrow(() -> new IllegalArgumentException("User not found with username: " + username));
 
         // Add the product to the cart
@@ -77,7 +76,7 @@ public class CartController {
         int quantity = (int) request.get("quantity");
 
         // Fetch the user using username
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findByusername(username)
                 .orElseThrow(() -> new IllegalArgumentException("User not found with username: " + username));
 
         // Update the cart item quantity
@@ -85,14 +84,14 @@ public class CartController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    // Delete Cart Item
+   
     @DeleteMapping("/delete")
     public ResponseEntity<Void> deleteCartItem(@RequestBody Map<String, Object> request) {
         String username = (String) request.get("username");
         int productId = (int) request.get("productId");
 
-        // Fetch the user using username
-        User user = userRepository.findByUsername(username)
+ 
+        User user = userRepository.findByusername(username)
                 .orElseThrow(() -> new IllegalArgumentException("User not found with username: " + username));
 
         // Delete the cart item

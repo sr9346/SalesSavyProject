@@ -1,18 +1,20 @@
+package com.user.service;
 
-package com.example.demo.service;
-
-import com.example.demo.entity.CartItem;
-import com.example.demo.entity.User;
-import com.example.demo.entity.Product;
-import com.example.demo.entity.ProductImage;
-import com.example.demo.repository.CartRepository;
-import com.example.demo.repository.ProductImageRepository;
-import com.example.demo.repository.ProductRepository;
-import com.example.demo.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.*;
+
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.Service;
+
+import com.user.entity.CartItem;
+import com.user.entity.Product;
+import com.user.entity.ProductImage;
+import com.user.entity.User;
+import com.user.repo.CartItemRepository;
+import com.user.repo.CartRepository;
+import com.user.repo.ProductImageRepository;
+import com.user.repo.ProductRepository;
+import com.user.repo.UserRepository;
 
 @Service
 public class CartService {
